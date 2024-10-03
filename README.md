@@ -42,7 +42,7 @@ Epoch 10/10 completed. Correctly classified 9307/10000. Accuracy: 93.07 %
 Epoch 10, Loss: 0.011555523540474141
 ```
 
-###Experiment 2:
+### Experiment 2:
 - Epochs: 20
 - Learning Rate: 0.5
 - Results:
@@ -89,7 +89,7 @@ Epoch 20/20 completed. Correctly classified 9407/10000. Accuracy: 94.07 %
 Epoch 20, Loss: 0.009912916641316287
 ```
 
-###Experiment 3:
+### Experiment 3:
 - Epochs: 5
 - Learning Rate: 2
 - Results:
@@ -106,7 +106,7 @@ Epoch 5/5 completed. Correctly classified 9064/10000. Accuracy: 90.64 %
 Epoch 5, Loss: 0.016553119977689656
 ```
 
-###Experiment 4:
+### Experiment 4:
 - Epochs: 20
 - Learning Rate: 2
 - Results:
@@ -153,7 +153,7 @@ Epoch 20/20 completed. Correctly classified 9164/10000. Accuracy: 91.64 %
 Epoch 20, Loss: 0.014869135159647663
 ```
 
-###Experiment 5:
+### Experiment 5:
 - Epochs: 5
 - Learning Rate: 0.5
 - Results:
