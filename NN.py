@@ -79,14 +79,33 @@ class NeuralNetwork:
 
         return correct_predictions, loss_sum
 
-    def train_network(self, training_data, epochs, learning_rate, t_data):
+    def get_batches(self, training_data, batch_size):
+        for i in range(0, len(training_data), batch_size):
+            yield training_data[i:i + batch_size]
+
+    def train_network(self, training_data, epochs, learning_rate, t_data, batch_size):
         n_test = len(t_data)
+        n_training = len(training_data)
+
+        total_w_g = [np.zeros(w.shape) for w in self.weights]
+        total_b_g = [np.zeros(b.shape) for b in self.biases]
 
         #training network through epochs
         for i in range(epochs):
-            for input_data, expected_output in training_data:
-                w_g, b_g = self.backpropagation(input_data, expected_output)
-                self.update_parameters(w_g, b_g, learning_rate)
+            for j in range(0, n_training, batch_size):
+                batch = training_data[j:j + batch_size]
+
+                for input_data, expected_output in batch:
+                    w_g, b_g = self.backpropagation(input_data, expected_output)
+
+                    total_w_g += w_g
+                    total_b_g += b_g
+
+            for j in range(len(total_w_g)):
+                total_w_g[j] /= n_training
+                total_b_g[j] /= n_training
+
+            self.update_parameters(total_w_g, total_b_g, learning_rate)
 
             #evaluating correct predictions and loss on test data
             corr, loss_sum = self.evaluate(t_data)

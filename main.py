@@ -32,9 +32,10 @@ training_data = training_data[:-10000]
 #here we can experiment with params for learning
 epochs = 5
 learning_rate = 0.5
+batch_size = 8
 
 #plot_mnist(training_data[:16])
 
 NN=NN.NeuralNetwork([784,20,10])
-NN.train_network(training_data, epochs, learning_rate, test_data)
+NN.train_network(training_data, epochs, learning_rate, test_data, batch_size)
 
