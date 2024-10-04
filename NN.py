@@ -87,25 +87,28 @@ class NeuralNetwork:
         n_test = len(t_data)
         n_training = len(training_data)
 
-        total_w_g = [np.zeros(w.shape) for w in self.weights]
-        total_b_g = [np.zeros(b.shape) for b in self.biases]
-
         #training network through epochs
         for i in range(epochs):
+            #traversing through whole dataset taking mini batches
             for j in range(0, n_training, batch_size):
+                #taking mini batch from whole data set
                 batch = training_data[j:j + batch_size]
+                total_w_g = [np.zeros(w.shape) for w in self.weights]
+                total_b_g = [np.zeros(b.shape) for b in self.biases]
 
                 for input_data, expected_output in batch:
                     w_g, b_g = self.backpropagation(input_data, expected_output)
 
-                    total_w_g += w_g
-                    total_b_g += b_g
+                #adding gradients and making diameter from it
+                    for k in range(len(total_w_g)):
+                        total_w_g[k] += w_g[k]
+                        total_b_g[k] += b_g[k]
 
-            for j in range(len(total_w_g)):
-                total_w_g[j] /= n_training
-                total_b_g[j] /= n_training
+                for j in range(len(total_w_g)):
+                    total_b_g[j] /= batch_size
+                    total_w_g[j] /= batch_size
 
-            self.update_parameters(total_w_g, total_b_g, learning_rate)
+                self.update_parameters(total_w_g, total_b_g, learning_rate)
 
             #evaluating correct predictions and loss on test data
             corr, loss_sum = self.evaluate(t_data)

@@ -30,8 +30,8 @@ test_data = training_data[-10000:]
 training_data = training_data[:-10000]
 
 #here we can experiment with params for learning
-epochs = 5
-learning_rate = 0.5
+epochs = 10
+learning_rate = 1
 batch_size = 8
 
 #plot_mnist(training_data[:16])

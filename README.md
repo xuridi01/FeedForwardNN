@@ -1,6 +1,6 @@
 # Neural Network for MNIST Classification
 
-This repository contains a feedforward neural network implementation designed to classify handwritten digits from the MNIST dataset. The model is built using Python and NumPy, and it includes training and testing functionalities.
+This repository contains a feedforward neural network implementation designed to classify handwritten digits from the MNIST dataset. The model is built using Python and NumPy, and it includes training and testing functionalities. This network is designed with mini batch gradient descent, whole data set is processed sequentially in one epoch but weights and biases are changed after mini batch.
 
 
 ## Introduction
@@ -14,32 +14,33 @@ To run this project, you will need the following libraries:
 - (Matplotlib)
 
 ## Experiments with learning rate and number of epochs
+- Size of mini batch is 8 for these experiments
 
 ### Experiment 1:
 - Epochs: 10
 - Learning Rate: 1
 - Results:
 ```python
-Epoch 1/10 completed. Correctly classified 8907/10000. Accuracy: 89.07 % 
-Epoch 1, Loss: 0.017605981693373452
-Epoch 2/10 completed. Correctly classified 9051/10000. Accuracy: 90.51 % 
-Epoch 2, Loss: 0.01502460355525308
-Epoch 3/10 completed. Correctly classified 9168/10000. Accuracy: 91.68 % 
-Epoch 3, Loss: 0.0134059778729235
-Epoch 4/10 completed. Correctly classified 9218/10000. Accuracy: 92.18 % 
-Epoch 4, Loss: 0.013154354222402501
-Epoch 5/10 completed. Correctly classified 9262/10000. Accuracy: 92.62 % 
-Epoch 5, Loss: 0.012476463460842515
-Epoch 6/10 completed. Correctly classified 9245/10000. Accuracy: 92.45 % 
-Epoch 6, Loss: 0.01247219614787174
-Epoch 7/10 completed. Correctly classified 9189/10000. Accuracy: 91.89 % 
-Epoch 7, Loss: 0.01343202468584501
-Epoch 8/10 completed. Correctly classified 9299/10000. Accuracy: 92.99 % 
-Epoch 8, Loss: 0.011900653303253989
-Epoch 9/10 completed. Correctly classified 9216/10000. Accuracy: 92.16 % 
-Epoch 9, Loss: 0.012684261923451672
-Epoch 10/10 completed. Correctly classified 9307/10000. Accuracy: 93.07 % 
-Epoch 10, Loss: 0.011555523540474141
+Epoch 1/10 completed. Correctly classified 8707/10000. Accuracy: 87.07 % 
+Epoch 1, Loss: 0.020431834807744267
+Epoch 2/10 completed. Correctly classified 9070/10000. Accuracy: 90.7 % 
+Epoch 2, Loss: 0.015126205352906638
+Epoch 3/10 completed. Correctly classified 9158/10000. Accuracy: 91.58 % 
+Epoch 3, Loss: 0.013517070339832366
+Epoch 4/10 completed. Correctly classified 9197/10000. Accuracy: 91.97 % 
+Epoch 4, Loss: 0.012682049518899735
+Epoch 5/10 completed. Correctly classified 9226/10000. Accuracy: 92.26 % 
+Epoch 5, Loss: 0.012187411389877046
+Epoch 6/10 completed. Correctly classified 9249/10000. Accuracy: 92.49 % 
+Epoch 6, Loss: 0.011883495277369448
+Epoch 7/10 completed. Correctly classified 9280/10000. Accuracy: 92.8 % 
+Epoch 7, Loss: 0.011542140965277049
+Epoch 8/10 completed. Correctly classified 9292/10000. Accuracy: 92.92 % 
+Epoch 8, Loss: 0.01140434649455433
+Epoch 9/10 completed. Correctly classified 9302/10000. Accuracy: 93.02 % 
+Epoch 9, Loss: 0.011282555396195217
+Epoch 10/10 completed. Correctly classified 9302/10000. Accuracy: 93.02 % 
+Epoch 10, Loss: 0.011228936434245813
 ```
 
 ### Experiment 2:
@@ -47,46 +48,45 @@ Epoch 10, Loss: 0.011555523540474141
 - Learning Rate: 0.5
 - Results:
 ```python
-Epoch 1/20 completed. Correctly classified 9085/10000. Accuracy: 90.85 % 
-Epoch 1, Loss: 0.014508466447337253
-Epoch 2/20 completed. Correctly classified 9190/10000. Accuracy: 91.9 % 
-Epoch 2, Loss: 0.012902526195423486
-Epoch 3/20 completed. Correctly classified 9244/10000. Accuracy: 92.44 % 
-Epoch 3, Loss: 0.012153957042845125
-Epoch 4/20 completed. Correctly classified 9303/10000. Accuracy: 93.03 % 
-Epoch 4, Loss: 0.01164587523816519
-Epoch 5/20 completed. Correctly classified 9348/10000. Accuracy: 93.48 % 
-Epoch 5, Loss: 0.011211019298687477
-Epoch 6/20 completed. Correctly classified 9321/10000. Accuracy: 93.21 % 
-Epoch 6, Loss: 0.011149727559415746
-Epoch 7/20 completed. Correctly classified 9308/10000. Accuracy: 93.08 % 
-Epoch 7, Loss: 0.011522008689125316
-Epoch 8/20 completed. Correctly classified 9362/10000. Accuracy: 93.62 % 
-Epoch 8, Loss: 0.010543251311626384
-Epoch 9/20 completed. Correctly classified 9377/10000. Accuracy: 93.77 % 
-Epoch 9, Loss: 0.010383253564521265
-Epoch 10/20 completed. Correctly classified 9286/10000. Accuracy: 92.86 % 
-Epoch 10, Loss: 0.011916542040525311
-Epoch 11/20 completed. Correctly classified 9331/10000. Accuracy: 93.31 % 
-Epoch 11, Loss: 0.011131790642451398
-Epoch 12/20 completed. Correctly classified 9392/10000. Accuracy: 93.92 % 
-Epoch 12, Loss: 0.010290431123847078
-Epoch 13/20 completed. Correctly classified 9372/10000. Accuracy: 93.72 % 
-Epoch 13, Loss: 0.010605674127212724
-Epoch 14/20 completed. Correctly classified 9393/10000. Accuracy: 93.93 % 
-Epoch 14, Loss: 0.010252080983300656
-Epoch 15/20 completed. Correctly classified 9369/10000. Accuracy: 93.69 % 
-Epoch 15, Loss: 0.010575572137749225
-Epoch 16/20 completed. Correctly classified 9383/10000. Accuracy: 93.83 % 
-Epoch 16, Loss: 0.010374584419232296
-Epoch 17/20 completed. Correctly classified 9369/10000. Accuracy: 93.69 % 
-Epoch 17, Loss: 0.010581825571705344
-Epoch 18/20 completed. Correctly classified 9410/10000. Accuracy: 94.1 % 
-Epoch 18, Loss: 0.010096903424236268
-Epoch 19/20 completed. Correctly classified 9386/10000. Accuracy: 93.86 % 
-Epoch 19, Loss: 0.010188183587423086
-Epoch 20/20 completed. Correctly classified 9407/10000. Accuracy: 94.07 % 
-Epoch 20, Loss: 0.009912916641316287
+Epoch 1, Loss: 0.03739422056924159
+Epoch 2/20 completed. Correctly classified 8737/10000. Accuracy: 87.37 % 
+Epoch 2, Loss: 0.020175157303015202
+Epoch 3/20 completed. Correctly classified 8938/10000. Accuracy: 89.38 % 
+Epoch 3, Loss: 0.016844200222621394
+Epoch 4/20 completed. Correctly classified 9032/10000. Accuracy: 90.32 % 
+Epoch 4, Loss: 0.015246363343179218
+Epoch 5/20 completed. Correctly classified 9098/10000. Accuracy: 90.98 % 
+Epoch 5, Loss: 0.014256661591828399
+Epoch 6/20 completed. Correctly classified 9134/10000. Accuracy: 91.34 % 
+Epoch 6, Loss: 0.013664022005199544
+Epoch 7/20 completed. Correctly classified 9177/10000. Accuracy: 91.77 % 
+Epoch 7, Loss: 0.013199258656320895
+Epoch 8/20 completed. Correctly classified 9195/10000. Accuracy: 91.95 % 
+Epoch 8, Loss: 0.012828230000720966
+Epoch 9/20 completed. Correctly classified 9205/10000. Accuracy: 92.05 % 
+Epoch 9, Loss: 0.012523247682472647
+Epoch 10/20 completed. Correctly classified 9220/10000. Accuracy: 92.2 % 
+Epoch 10, Loss: 0.012290568627048703
+Epoch 11/20 completed. Correctly classified 9230/10000. Accuracy: 92.3 % 
+Epoch 11, Loss: 0.012128800802774242
+Epoch 12/20 completed. Correctly classified 9240/10000. Accuracy: 92.4 % 
+Epoch 12, Loss: 0.01199596203944146
+Epoch 13/20 completed. Correctly classified 9250/10000. Accuracy: 92.5 % 
+Epoch 13, Loss: 0.011866159920046313
+Epoch 14/20 completed. Correctly classified 9262/10000. Accuracy: 92.62 % 
+Epoch 14, Loss: 0.011740477085474082
+Epoch 15/20 completed. Correctly classified 9267/10000. Accuracy: 92.67 % 
+Epoch 15, Loss: 0.011629489465826986
+Epoch 16/20 completed. Correctly classified 9277/10000. Accuracy: 92.77 % 
+Epoch 16, Loss: 0.011534691643735488
+Epoch 17/20 completed. Correctly classified 9283/10000. Accuracy: 92.83 % 
+Epoch 17, Loss: 0.011436997116182351
+Epoch 18/20 completed. Correctly classified 9283/10000. Accuracy: 92.83 % 
+Epoch 18, Loss: 0.011351996502812876
+Epoch 19/20 completed. Correctly classified 9301/10000. Accuracy: 93.01 % 
+Epoch 19, Loss: 0.011264387164733698
+Epoch 20/20 completed. Correctly classified 9304/10000. Accuracy: 93.04 % 
+Epoch 20, Loss: 0.011177305078867661
 ```
 
 ### Experiment 3:
@@ -94,16 +94,15 @@ Epoch 20, Loss: 0.009912916641316287
 - Learning Rate: 2
 - Results:
 ```python
-Epoch 1/5 completed. Correctly classified 8553/10000. Accuracy: 85.53 % 
-Epoch 1, Loss: 0.02429639222064912
-Epoch 2/5 completed. Correctly classified 8689/10000. Accuracy: 86.89 % 
-Epoch 2, Loss: 0.02204438612451149
-Epoch 3/5 completed. Correctly classified 9022/10000. Accuracy: 90.22 % 
-Epoch 3, Loss: 0.01761010369864547
-Epoch 4/5 completed. Correctly classified 8946/10000. Accuracy: 89.46 % 
-Epoch 4, Loss: 0.01862393516713422
-Epoch 5/5 completed. Correctly classified 9064/10000. Accuracy: 90.64 % 
-Epoch 5, Loss: 0.016553119977689656
+Epoch 1, Loss: 0.015701496490690175
+Epoch 2/5 completed. Correctly classified 9203/10000. Accuracy: 92.03 % 
+Epoch 2, Loss: 0.012791847695832564
+Epoch 3/5 completed. Correctly classified 9256/10000. Accuracy: 92.56 % 
+Epoch 3, Loss: 0.01195895844769495
+Epoch 4/5 completed. Correctly classified 9279/10000. Accuracy: 92.79 % 
+Epoch 4, Loss: 0.011321651598209626
+Epoch 5/5 completed. Correctly classified 9270/10000. Accuracy: 92.7 % 
+Epoch 5, Loss: 0.011598422147513106
 ```
 
 ### Experiment 4:
@@ -111,46 +110,46 @@ Epoch 5, Loss: 0.016553119977689656
 - Learning Rate: 2
 - Results:
 ```python
-Epoch 1/20 completed. Correctly classified 8709/10000. Accuracy: 87.09 % 
-Epoch 1, Loss: 0.02082964197714403
-Epoch 2/20 completed. Correctly classified 8871/10000. Accuracy: 88.71 % 
-Epoch 2, Loss: 0.01981819219203677
-Epoch 3/20 completed. Correctly classified 8840/10000. Accuracy: 88.4 % 
-Epoch 3, Loss: 0.01966719722219742
-Epoch 4/20 completed. Correctly classified 8977/10000. Accuracy: 89.77 % 
-Epoch 4, Loss: 0.01813737497712147
-Epoch 5/20 completed. Correctly classified 9033/10000. Accuracy: 90.33 % 
-Epoch 5, Loss: 0.017034969304401362
-Epoch 6/20 completed. Correctly classified 9086/10000. Accuracy: 90.86 % 
-Epoch 6, Loss: 0.01627758069747813
-Epoch 7/20 completed. Correctly classified 9097/10000. Accuracy: 90.97 % 
-Epoch 7, Loss: 0.015739522017612376
-Epoch 8/20 completed. Correctly classified 9046/10000. Accuracy: 90.46 % 
-Epoch 8, Loss: 0.01665031011186857
-Epoch 9/20 completed. Correctly classified 9111/10000. Accuracy: 91.11 % 
-Epoch 9, Loss: 0.01482499972126524
-Epoch 10/20 completed. Correctly classified 9210/10000. Accuracy: 92.1 % 
-Epoch 10, Loss: 0.013746764720183768
-Epoch 11/20 completed. Correctly classified 9111/10000. Accuracy: 91.11 % 
-Epoch 11, Loss: 0.01527509452699652
-Epoch 12/20 completed. Correctly classified 9158/10000. Accuracy: 91.58 % 
-Epoch 12, Loss: 0.01453821312641052
-Epoch 13/20 completed. Correctly classified 9143/10000. Accuracy: 91.43 % 
-Epoch 13, Loss: 0.01475132166040763
-Epoch 14/20 completed. Correctly classified 9148/10000. Accuracy: 91.48 % 
-Epoch 14, Loss: 0.014381069608510625
-Epoch 15/20 completed. Correctly classified 9197/10000. Accuracy: 91.97 % 
-Epoch 15, Loss: 0.013816348934375609
-Epoch 16/20 completed. Correctly classified 9197/10000. Accuracy: 91.97 % 
-Epoch 16, Loss: 0.014223469043913127
-Epoch 17/20 completed. Correctly classified 9118/10000. Accuracy: 91.18 % 
-Epoch 17, Loss: 0.015706953901913782
-Epoch 18/20 completed. Correctly classified 9209/10000. Accuracy: 92.09 % 
-Epoch 18, Loss: 0.013955310123696761
-Epoch 19/20 completed. Correctly classified 9235/10000. Accuracy: 92.35 % 
-Epoch 19, Loss: 0.013234334931393093
-Epoch 20/20 completed. Correctly classified 9164/10000. Accuracy: 91.64 % 
-Epoch 20, Loss: 0.014869135159647663
+Epoch 1/20 completed. Correctly classified 8953/10000. Accuracy: 89.53 % 
+Epoch 1, Loss: 0.016812660202272393
+Epoch 2/20 completed. Correctly classified 9147/10000. Accuracy: 91.47 % 
+Epoch 2, Loss: 0.013808511911803632
+Epoch 3/20 completed. Correctly classified 9235/10000. Accuracy: 92.35 % 
+Epoch 3, Loss: 0.012623033560568422
+Epoch 4/20 completed. Correctly classified 9256/10000. Accuracy: 92.56 % 
+Epoch 4, Loss: 0.01226375478792278
+Epoch 5/20 completed. Correctly classified 9282/10000. Accuracy: 92.82 % 
+Epoch 5, Loss: 0.01195683965142396
+Epoch 6/20 completed. Correctly classified 9324/10000. Accuracy: 93.24 % 
+Epoch 6, Loss: 0.011306823468654373
+Epoch 7/20 completed. Correctly classified 9339/10000. Accuracy: 93.39 % 
+Epoch 7, Loss: 0.011113028551400833
+Epoch 8/20 completed. Correctly classified 9314/10000. Accuracy: 93.14 % 
+Epoch 8, Loss: 0.011339000090624397
+Epoch 9/20 completed. Correctly classified 9343/10000. Accuracy: 93.43 % 
+Epoch 9, Loss: 0.011007724900796921
+Epoch 10/20 completed. Correctly classified 9344/10000. Accuracy: 93.44 % 
+Epoch 10, Loss: 0.010783353604411336
+Epoch 11/20 completed. Correctly classified 9352/10000. Accuracy: 93.52 % 
+Epoch 11, Loss: 0.010730096470737263
+Epoch 12/20 completed. Correctly classified 9364/10000. Accuracy: 93.64 % 
+Epoch 12, Loss: 0.010559138249562363
+Epoch 13/20 completed. Correctly classified 9348/10000. Accuracy: 93.48 % 
+Epoch 13, Loss: 0.010641026473216726
+Epoch 14/20 completed. Correctly classified 9359/10000. Accuracy: 93.59 % 
+Epoch 14, Loss: 0.010600337584960078
+Epoch 15/20 completed. Correctly classified 9348/10000. Accuracy: 93.48 % 
+Epoch 15, Loss: 0.010652489948406953
+Epoch 16/20 completed. Correctly classified 9374/10000. Accuracy: 93.74 % 
+Epoch 16, Loss: 0.010433495498263513
+Epoch 17/20 completed. Correctly classified 9338/10000. Accuracy: 93.38 % 
+Epoch 17, Loss: 0.010829045548123955
+Epoch 18/20 completed. Correctly classified 9372/10000. Accuracy: 93.72 % 
+Epoch 18, Loss: 0.01041013800485609
+Epoch 19/20 completed. Correctly classified 9395/10000. Accuracy: 93.95 % 
+Epoch 19, Loss: 0.01027260898064316
+Epoch 20/20 completed. Correctly classified 9397/10000. Accuracy: 93.97 % 
+Epoch 20, Loss: 0.010238306225814097
 ```
 
 ### Experiment 5:
@@ -158,14 +157,14 @@ Epoch 20, Loss: 0.014869135159647663
 - Learning Rate: 0.5
 - Results:
 ```python
-Epoch 1/5 completed. Correctly classified 9052/10000. Accuracy: 90.52 % 
-Epoch 1, Loss: 0.01499473507716492
-Epoch 2/5 completed. Correctly classified 9035/10000. Accuracy: 90.35 % 
-Epoch 2, Loss: 0.015511006574705692
-Epoch 3/5 completed. Correctly classified 9245/10000. Accuracy: 92.45 % 
-Epoch 3, Loss: 0.012117035131248758
-Epoch 4/5 completed. Correctly classified 9245/10000. Accuracy: 92.45 % 
-Epoch 4, Loss: 0.011749954213095923
-Epoch 5/5 completed. Correctly classified 9208/10000. Accuracy: 92.08 % 
-Epoch 5, Loss: 0.012413021511690204
+Epoch 1/5 completed. Correctly classified 8379/10000. Accuracy: 83.79 % 
+Epoch 1, Loss: 0.025552576838239912
+Epoch 2/5 completed. Correctly classified 8827/10000. Accuracy: 88.27 % 
+Epoch 2, Loss: 0.018742025917229416
+Epoch 3/5 completed. Correctly classified 8974/10000. Accuracy: 89.74 % 
+Epoch 3, Loss: 0.016498686860130833
+Epoch 4/5 completed. Correctly classified 9040/10000. Accuracy: 90.4 % 
+Epoch 4, Loss: 0.015315481511796474
+Epoch 5/5 completed. Correctly classified 9078/10000. Accuracy: 90.78 % 
+Epoch 5, Loss: 0.01454969802292826
 ```
